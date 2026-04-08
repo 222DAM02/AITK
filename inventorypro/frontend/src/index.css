@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&family=Roboto+Mono:wght@400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body { font-family: 'Titillium Web', -apple-system, sans-serif; background: #fffbeb; min-height: 100vh; }
+h1,h2,h3,h4,h5,h6 { font-family: 'Titillium Web', sans-serif; font-weight: 700; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+.animate-up { animation: fadeUp 0.5s ease-out forwards; }
+.up-delay-1{animation-delay:.1s; } .up-delay-2{animation-delay:.2s; } .up-delay-3{animation-delay:.3s; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #fffbeb; }

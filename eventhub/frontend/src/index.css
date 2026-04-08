@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Sora:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body { font-family: 'Sora', sans-serif; background: #fffbfa; min-height: 100vh; }
+h1,h2,h3,h4,h5,h6 { font-family: 'Poppins', sans-serif; font-weight: 700; }
+body::before { content:''; position:fixed; inset:0; background:radial-gradient(circle at 80% 10%, rgba(244,63,94,0.04) 0%, transparent 50%); pointer-events:none; z-index:0; }
+#root { position:relative; z-index:1; }
+@keyframes riseUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+.animate-rise { animation: riseUp 0.5s ease-out forwards; }
+.rise-delay-1{animation-delay:.1s; } .rise-delay-2{animation-delay:.2s; } .rise-delay-3{animation-delay:.3s; }
+.event-card { background:white; border:1px solid #fce7f3; border-radius:16px; transition:all .2s; }
+.event-card:hover { border-color:#f43f5e; box-shadow:0 8px 30px rgba(244,63,94,.1); transform:translateY(-2px); }
+::-webkit-scrollbar{width:6px} ::-webkit-scrollbar-track{background:#fffbfa} ::-webkit-scrollbar-thumb{background:#f43f5e;border-radius:3px}
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom, 0); }

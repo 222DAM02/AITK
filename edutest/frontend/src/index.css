@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: #faf5ff; min-height: 100vh; }
+h1,h2,h3,h4,h5,h6 { font-family: 'Lexend', sans-serif; font-weight: 700; }
+body::before { content:''; position:fixed; inset:0; background:radial-gradient(circle at 10% 90%, rgba(124,58,237,.04) 0%, transparent 50%), radial-gradient(circle at 90% 10%, rgba(99,102,241,.04) 0%, transparent 50%); pointer-events:none; z-index:0; }
+#root { position:relative; z-index:1; }
+@keyframes popIn { from{opacity:0;transform:scale(.9)} to{opacity:1;transform:scale(1)} }
+.animate-pop { animation: popIn 0.4s ease-out forwards; }
+.pop-delay-1{animation-delay:.1s; } .pop-delay-2{animation-delay:.2s; } .pop-delay-3{animation-delay:.3s; }
+.quiz-card { background:white; border:1px solid #ede9fe; border-radius:16px; transition:all .2s; }
+.quiz-card:hover { border-color:#8b5cf6; box-shadow:0 8px 30px rgba(124,58,237,.1); transform:translateY(-2px); }
+.difficulty-easy{color:#059669;background:#d1fae5} .difficulty-medium{color:#d97706;background:#fef3c7} .difficulty-hard{color:#dc2626;background:#fee2e2}
+::-webkit-scrollbar{width:6px} ::-webkit-scrollbar-track{background:#faf5ff} ::-webkit-scrollbar-thumb{background:#8b5cf6;border-radius:3px}
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom, 0); }

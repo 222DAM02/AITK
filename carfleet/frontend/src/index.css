@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Rubik:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body { font-family: 'Rubik', sans-serif; background: #f1f5f9; min-height: 100vh; }
+h1,h2,h3,h4,h5,h6 { font-family: 'Rajdhani', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.01em; }
+body::before { content:''; position:fixed; inset:0; background:linear-gradient(135deg, rgba(30,41,59,.02) 25%, transparent 25%, transparent 50%, rgba(30,41,59,.02) 50%, rgba(30,41,59,.02) 75%, transparent 75%); background-size:40px 40px; pointer-events:none; z-index:0; }
+#root { position:relative; z-index:1; }
+@keyframes driveIn { from{opacity:0;transform:translateX(-30px)} to{opacity:1;transform:translateX(0)} }
+.animate-drive { animation: driveIn 0.4s ease-out forwards; }
+.drive-delay-1{animation-delay:.1s; } .drive-delay-2{animation-delay:.2s; } .drive-delay-3{animation-delay:.3s; }
+.fleet-card { background:white; border:1px solid #e2e8f0; border-radius:12px; transition:all .2s; }
+.fleet-card:hover { border-color:#3b82f6; box-shadow:0 4px 20px rgba(59,130,246,.08); }
+::-webkit-scrollbar{width:6px} ::-webkit-scrollbar-track{background:#f1f5f9} ::-webkit-scrollbar-thumb{background:#475569;border-radius:3px}

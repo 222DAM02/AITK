@@ -1,0 +1,47 @@
+const themeConfig = {
+  projectName: "CarFleet",
+  projectDescription: "Управление автопарком: ТО, пробег, топливо и страховки",
+  projectIcon: "🚗",
+  entityName: "Транспорт",
+  entityNamePlural: "Транспорт",
+  entityRoute: "items",
+  entityFields: [
+    { name: "title", label: "Название (марка модель год)", type: "text", required: true },
+    { name: "description", label: "Описание", type: "textarea" },
+    { name: "vin", label: "VIN", type: "text" },
+    { name: "license_plate", label: "Гос. номер", type: "text" },
+    { name: "status", label: "Статус", type: "select", options: [
+      { value: "active", label: "В эксплуатации" }, { value: "maintenance", label: "На ТО" },
+      { value: "repair", label: "В ремонте" }, { value: "decommissioned", label: "Списан" },
+    ]},
+    { name: "fuel_type", label: "Топливо", type: "select", options: [
+      { value: "petrol", label: "Бензин" }, { value: "diesel", label: "Дизель" },
+      { value: "electric", label: "Электро" }, { value: "hybrid", label: "Гибрид" }, { value: "gas", label: "Газ" },
+    ]},
+    { name: "year", label: "Год выпуска", type: "number" },
+    { name: "mileage", label: "Пробег (км)", type: "number" },
+    { name: "insurance_expires", label: "Страховка до", type: "date" },
+    { name: "next_maintenance", label: "Следующее ТО", type: "date" },
+  ],
+  aiFeature: {
+    title: "AI-менеджер автопарка",
+    description: "Рекомендации по ТО, расходу топлива и управлению транспортом",
+    placeholder: "Например: когда нужно менять масло на Toyota Camry с пробегом 50000 км?",
+  },
+  s: {
+    btnPrimary: "bg-slate-800 hover:bg-slate-900 text-white font-medium shadow-sm",
+    btnSecondary: "bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 font-medium",
+    btnDanger: "bg-red-500 hover:bg-red-600 text-white font-medium shadow-sm",
+    btnSuccess: "bg-emerald-500 hover:bg-emerald-600 text-white font-medium shadow-sm",
+    nav: "bg-slate-900 text-white shadow-lg",
+    heroGradient: "bg-gradient-to-br from-slate-800 via-slate-700 to-blue-800",
+    accent: "text-blue-600",
+    accentBg: "bg-blue-50",
+    accentBgStrong: "bg-blue-100",
+    accentBorder: "border-blue-200",
+    accentRing: "focus:ring-blue-400 focus:ring-2 focus:ring-offset-1",
+    badge: "bg-blue-100 text-blue-800",
+    link: "text-blue-600 hover:text-blue-800",
+  },
+}
+export default themeConfig

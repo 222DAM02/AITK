@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Nunito', -apple-system, sans-serif;
+  background: #fefcf3;
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+}
+h4, h5, h6 { font-family: 'Nunito', sans-serif; font-weight: 700; }
+
+/* Lined paper background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: repeating-linear-gradient(transparent, transparent 31px, #e8dcc8 31px, #e8dcc8 32px);
+  background-size: 100% 32px;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+}
+#root { position: relative; z-index: 1; }
+
+/* Sticky note style */
+.sticky-note {
+  background: #fff9c4;
+  border-left: 4px solid #fdd835;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.08);
+  transform: rotate(-1deg);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.sticky-note:hover { transform: rotate(0deg) translateY(-4px); box-shadow: 4px 4px 16px rgba(0,0,0,0.12); }
+.sticky-blue { background: #e3f2fd; border-left-color: #42a5f5; transform: rotate(0.5deg); }
+.sticky-pink { background: #fce4ec; border-left-color: #ef5350; transform: rotate(-0.8deg); }
+.sticky-green { background: #e8f5e9; border-left-color: #66bb6a; transform: rotate(1.2deg); }
+
+@keyframes writeIn {
+  from { opacity: 0; transform: translateY(10px) rotate(-2deg); }
+  to { opacity: 1; transform: translateY(0) rotate(0); }
+}
+.animate-write { animation: writeIn 0.5s ease-out forwards; }
+.write-delay-1 { animation-delay: 0.1s; }
+.write-delay-2 { animation-delay: 0.2s; }
+.write-delay-3 { animation-delay: 0.3s; }
+
+/* Pencil underline */
+.pencil-underline {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: #42a5f5;
+  text-underline-offset: 6px;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #fefcf3; }
+::-webkit-scrollbar-thumb { background: #c9b99a; border-radius: 4px; }

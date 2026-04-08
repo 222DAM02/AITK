@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Archivo:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Archivo', -apple-system, sans-serif;
+  background: #fafafa;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 { font-family: 'Archivo', sans-serif; font-weight: 800; }
+.mono { font-family: 'Space Mono', monospace; }
+
+/* Precise grid */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+  z-index: 0;
+}
+#root { position: relative; z-index: 1; }
+
+/* Swiss accent line */
+.swiss-accent { border-left: 4px solid #06b6d4; }
+.swiss-line { height: 4px; background: #06b6d4; }
+
+@keyframes preciseIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.animate-precise { animation: preciseIn 0.4s ease-out forwards; }
+.precise-delay-1 { animation-delay: 0.1s; }
+.precise-delay-2 { animation-delay: 0.2s; }
+.precise-delay-3 { animation-delay: 0.3s; }
+
+/* Timer pulse */
+@keyframes timerPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+.timer-pulse { animation: timerPulse 1s ease-in-out infinite; }
+
+/* Minimal card */
+.swiss-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.swiss-card:hover {
+  border-color: #06b6d4;
+  box-shadow: 0 4px 20px rgba(6, 182, 212, 0.08);
+}
+
+/* Color utility classes */
+.color-blue { background-color: #3b82f6; }
+.color-green { background-color: #22c55e; }
+.color-red { background-color: #ef4444; }
+.color-purple { background-color: #a855f7; }
+.color-orange { background-color: #f97316; }
+.color-cyan { background-color: #06b6d4; }
+.color-pink { background-color: #ec4899; }
+.color-yellow { background-color: #eab308; }
+
+.color-dot-blue { background-color: #3b82f6; }
+.color-dot-green { background-color: #22c55e; }
+.color-dot-red { background-color: #ef4444; }
+.color-dot-purple { background-color: #a855f7; }
+.color-dot-orange { background-color: #f97316; }
+.color-dot-cyan { background-color: #06b6d4; }
+.color-dot-pink { background-color: #ec4899; }
+.color-dot-yellow { background-color: #eab308; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #fafafa; }
+::-webkit-scrollbar-thumb { background: #06b6d4; border-radius: 2px; }

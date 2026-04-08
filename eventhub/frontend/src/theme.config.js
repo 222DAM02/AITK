@@ -1,0 +1,46 @@
+const themeConfig = {
+  projectName: "EventHub",
+  projectDescription: "Площадка мероприятий: создавайте события, регистрируйтесь и управляйте расписанием",
+  projectIcon: "🎪",
+  entityName: "Событие",
+  entityNamePlural: "События",
+  entityRoute: "items",
+  entityFields: [
+    { name: "title", label: "Название", type: "text", required: true },
+    { name: "description", label: "Описание", type: "textarea" },
+    { name: "event_type", label: "Тип", type: "select", required: true, options: [
+      { value: "conference", label: "Конференция" }, { value: "meetup", label: "Митап" },
+      { value: "workshop", label: "Воркшоп" }, { value: "webinar", label: "Вебинар" },
+      { value: "hackathon", label: "Хакатон" }, { value: "party", label: "Вечеринка" }, { value: "other", label: "Другое" },
+    ]},
+    { name: "status", label: "Статус", type: "select", options: [
+      { value: "upcoming", label: "Предстоит" }, { value: "active", label: "Идёт" },
+      { value: "completed", label: "Завершено" }, { value: "cancelled", label: "Отменено" },
+    ]},
+    { name: "location", label: "Место", type: "text" },
+    { name: "date", label: "Дата", type: "date", required: true },
+    { name: "max_participants", label: "Макс. участников", type: "number" },
+    { name: "is_free", label: "Бесплатно", type: "select", options: [{ value: true, label: "Да" }, { value: false, label: "Нет" }] },
+  ],
+  aiFeature: {
+    title: "AI-организатор мероприятий",
+    description: "Планируйте события с учётом праздников и выходных дней",
+    placeholder: "Например: когда лучше провести конференцию в мае в России?",
+  },
+  s: {
+    btnPrimary: "bg-rose-600 hover:bg-rose-700 text-white font-medium shadow-sm",
+    btnSecondary: "bg-white text-rose-700 border border-rose-200 hover:bg-rose-50 font-medium",
+    btnDanger: "bg-red-500 hover:bg-red-600 text-white font-medium shadow-sm",
+    btnSuccess: "bg-emerald-500 hover:bg-emerald-600 text-white font-medium shadow-sm",
+    nav: "bg-white border-b border-gray-200 shadow-sm",
+    heroGradient: "bg-gradient-to-br from-rose-500 via-pink-500 to-orange-400",
+    accent: "text-rose-600",
+    accentBg: "bg-rose-50",
+    accentBgStrong: "bg-rose-100",
+    accentBorder: "border-rose-200",
+    accentRing: "focus:ring-rose-400 focus:ring-2 focus:ring-offset-1",
+    badge: "bg-rose-100 text-rose-800",
+    link: "text-rose-600 hover:text-rose-800",
+  },
+}
+export default themeConfig
